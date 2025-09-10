@@ -18,6 +18,9 @@ public class PlayerMovement : MonoBehaviour
         moveAction = GetComponent<PlayerInput>().actions["Move"];
         rb = GetComponent<Rigidbody>();
         currentSpeed = speed;
+
+        // Make sure gravity is enabled on the Rigidbody
+        rb.useGravity = true;
     }
 
     private void FixedUpdate()
@@ -34,9 +37,13 @@ public class PlayerMovement : MonoBehaviour
         right.Normalize();
 
         Vector3 direction = (forward * input.y + right * input.x).normalized;
-        Vector3 movement = direction * currentSpeed * Time.fixedDeltaTime;
 
-        rb.MovePosition(rb.position + movement);
+        // Keep current gravity velocity
+        Vector3 velocity = rb.linearVelocity;
+        Vector3 moveVelocity = direction * currentSpeed;
+
+        // Preserve gravity on Y while moving X/Z
+        rb.linearVelocity = new Vector3(moveVelocity.x, velocity.y, moveVelocity.z);
     }
 
     public void BoostSpeed()

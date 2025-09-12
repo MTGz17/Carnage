@@ -1,17 +1,21 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float speed = 5f;
-    [SerializeField] float boostedSpeed = 10f;
-    [SerializeField] float boostDuration = 2f;
+    [SerializeField] private float speed = 10f;
+    [SerializeField] private float boostedSpeed = 15f;
+    [SerializeField] private float boostDuration = 3f;
 
     private float currentSpeed;
     private bool isBoosted = false;
 
-    InputAction moveAction;
-    Rigidbody rb;
+    private InputAction moveAction;
+    private Rigidbody rb;
+
+    [Header("Car Physics Settings")]
+    [SerializeField] private float turnTorqueMultiplier = 75f; // How strongly the car turns
 
     private void Start()
     {
@@ -19,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         currentSpeed = speed;
 
-        // Make sure gravity is enabled on the Rigidbody
+        // Ensure gravity is enabled
         rb.useGravity = true;
     }
 
@@ -27,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 input = moveAction.ReadValue<Vector2>();
 
+        // Convert input to world-space movement relative to camera
         Vector3 forward = Camera.main.transform.forward;
         Vector3 right = Camera.main.transform.right;
 
@@ -38,12 +43,12 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 direction = (forward * input.y + right * input.x).normalized;
 
-        // Keep current gravity velocity
-        Vector3 velocity = rb.linearVelocity;
-        Vector3 moveVelocity = direction * currentSpeed;
+        // Apply forward/backward movement using AddForce
+        rb.AddForce(direction * currentSpeed, ForceMode.Acceleration);
 
-        // Preserve gravity on Y while moving X/Z
-        rb.linearVelocity = new Vector3(moveVelocity.x, velocity.y, moveVelocity.z);
+        // Apply turning torque around Y-axis for car-like feel
+        Vector3 torque = Vector3.up * input.x * turnTorqueMultiplier;
+        rb.AddTorque(torque, ForceMode.Acceleration);
     }
 
     public void BoostSpeed()

@@ -1,70 +1,78 @@
 using UnityEngine;
+using System.Collections;
 
 public class TrafficSpawner : MonoBehaviour
 {
     [Header("Car Settings")]
-    public GameObject[] carPrefabs;          // Array of car prefabs to spawn
-    public Vector2 speedRange = new Vector2(5f, 15f); // Random speed range
+    public GameObject[] carPrefabs;                 // Car prefabs array
+    public Vector2 speedRange = new Vector2(5f, 15f); // Initial impulse speed range
+    public Vector2 massRange = new Vector2(1f, 3f);   // Random mass for chaos
+    public Vector2 dragRange = new Vector2(0.3f, 1f); // Random drag for friction
 
     [Header("Spawn Settings")]
-    public float minSpawnDelay = 1f;  // Minimum time between spawns
-    public float maxSpawnDelay = 3f;  // Maximum time between spawns
+    public float minSpawnDelay = 1f;
+    public float maxSpawnDelay = 3f;
 
     [Header("Spawn Position Ranges")]
-    public Vector2 spawnXRange = new Vector2(10f, 15f); // Min and Max X
-    public float spawnY = 0.45f;                         // Fixed height
-    public Vector2 spawnZRange = new Vector2(30f, 35f); // Min and Max Z
+    public Vector2 spawnXRange = new Vector2(10f, 15f);
+    public float spawnY = 0.45f;
+    public Vector2 spawnZRange = new Vector2(30f, 35f);
+
+    [Header("Optional Rotation")]
+    public bool randomRotation = true;
+    public Vector2 rotationYRange = new Vector2(-10f, 10f); // small initial twist
 
     private void Start()
     {
         StartCoroutine(SpawnLoop());
     }
 
-    private System.Collections.IEnumerator SpawnLoop()
+    private IEnumerator SpawnLoop()
     {
         while (true)
         {
-            // Wait for random time before spawning next car
             yield return new WaitForSeconds(Random.Range(minSpawnDelay, maxSpawnDelay));
 
-            // Pick random position within X and Z ranges, fixed Y
+            // Pick a random car prefab
+            GameObject carPrefab = carPrefabs[Random.Range(0, carPrefabs.Length)];
+
+            // Calculate spawn Y so car sits on ground
+            Collider carCollider = carPrefab.GetComponent<Collider>();
+            float spawnHeight = spawnY;
+            if (carCollider != null)
+                spawnHeight += carCollider.bounds.extents.y;
+
+            // Random spawn position
             Vector3 spawnPos = new Vector3(
                 Random.Range(spawnXRange.x, spawnXRange.y),
-                spawnY,
+                spawnHeight,
                 Random.Range(spawnZRange.x, spawnZRange.y)
             );
 
-            // Pick random car prefab
-            GameObject carPrefab = carPrefabs[Random.Range(0, carPrefabs.Length)];
+            // Instantiate car
+            Quaternion rotation = Quaternion.identity;
+            if (randomRotation)
+            {
+                rotation = Quaternion.Euler(0f, Random.Range(rotationYRange.x, rotationYRange.y), 0f);
+            }
 
-            // Spawn the car
-            GameObject car = Instantiate(carPrefab, spawnPos, Quaternion.identity);
+            GameObject car = Instantiate(carPrefab, spawnPos, rotation);
 
-            // Give it a random speed
-            float carSpeed = Random.Range(speedRange.x, speedRange.y);
-            car.AddComponent<TrafficCar>().Init(carSpeed);
-        }
-    }
-}
+            // Add TrafficCar script if missing
+            TrafficCar trafficCar = car.GetComponent<TrafficCar>();
+            if (trafficCar == null)
+                trafficCar = car.AddComponent<TrafficCar>();
 
-public class TrafficCar : MonoBehaviour
-{
-    private float speed;
+            // Randomize initial speed
+            trafficCar.initialSpeed = Random.Range(speedRange.x, speedRange.y);
 
-    public void Init(float carSpeed)
-    {
-        speed = carSpeed;
-    }
-
-    private void Update()
-    {
-        // Move left in world space
-        transform.Translate(Vector3.left * speed * Time.deltaTime, Space.World);
-
-        // Destroy once far off screen
-        if (transform.position.x < -50f)
-        {
-            Destroy(gameObject);
+            // Configure Rigidbody
+            Rigidbody rb = car.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.mass = Random.Range(massRange.x, massRange.y);
+                rb.linearDamping = Random.Range(dragRange.x, dragRange.y);
+            }
         }
     }
 }

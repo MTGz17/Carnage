@@ -36,7 +36,7 @@ public class TrafficCar : MonoBehaviour
         }
 
         // Destroy offscreen cars
-        if (transform.position.x < -50f)
+        if (transform.position.x < -75f)
             Destroy(gameObject);
     }
 }

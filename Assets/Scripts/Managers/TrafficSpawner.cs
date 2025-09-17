@@ -4,7 +4,7 @@ using System.Collections;
 public class TrafficSpawner : MonoBehaviour
 {
     [Header("Car Settings")]
-    public GameObject[] carPrefabs;                 // Car prefabs array
+    public GameObject[] carPrefabs;                  // Car prefabs array
     public Vector2 speedRange = new Vector2(5f, 15f); // Initial impulse speed range
     public Vector2 massRange = new Vector2(1f, 3f);   // Random mass for chaos
     public Vector2 dragRange = new Vector2(0.3f, 1f); // Random drag for friction
@@ -53,7 +53,11 @@ public class TrafficSpawner : MonoBehaviour
             Quaternion rotation = Quaternion.identity;
             if (randomRotation)
             {
-                rotation = Quaternion.Euler(0f, Random.Range(rotationYRange.x, rotationYRange.y), 0f);
+                rotation = Quaternion.Euler(
+                    0f,
+                    Random.Range(rotationYRange.x, rotationYRange.y),
+                    0f
+                );
             }
 
             GameObject car = Instantiate(carPrefab, spawnPos, rotation);

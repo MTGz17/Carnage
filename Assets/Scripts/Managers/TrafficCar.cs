@@ -9,6 +9,7 @@ public class TrafficCar : MonoBehaviour
     public float drag = 0.5f;          // Adjust to simulate friction / slowing
 
     private Rigidbody rb;
+    private bool movementEnabled = true; // 🚗 controls if the car is driving itself
 
     private void Awake()
     {
@@ -16,7 +17,7 @@ public class TrafficCar : MonoBehaviour
         rb.isKinematic = false;
         rb.interpolation = RigidbodyInterpolation.Interpolate;
         rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
-        rb.linearDamping = drag; // slows the car naturally over time
+        rb.linearDamping = drag;
     }
 
     private void Start()
@@ -27,16 +28,28 @@ public class TrafficCar : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Optional: clamp max speed to prevent runaway acceleration
-        Vector3 horizontalVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
-        if (horizontalVelocity.magnitude > maxSpeed)
+        if (movementEnabled)
         {
-            horizontalVelocity = horizontalVelocity.normalized * maxSpeed;
-            rb.linearVelocity = new Vector3(horizontalVelocity.x, rb.linearVelocity.y, horizontalVelocity.z);
+            // Optional: clamp max speed to prevent runaway acceleration
+            Vector3 horizontalVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
+            if (horizontalVelocity.magnitude > maxSpeed)
+            {
+                horizontalVelocity = horizontalVelocity.normalized * maxSpeed;
+                rb.linearVelocity = new Vector3(horizontalVelocity.x, rb.linearVelocity.y, horizontalVelocity.z);
+            }
         }
 
         // Destroy offscreen cars
         if (transform.position.x < -75f)
             Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // When hit, disable scripted movement and let full physics take over
+        movementEnabled = false;
+
+        // (Optional) loosen drag so the wreck reacts more dramatically
+        rb.linearDamping = 0.1f; 
     }
 }

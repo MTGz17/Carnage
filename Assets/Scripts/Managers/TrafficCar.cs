@@ -40,7 +40,7 @@ public class TrafficCar : MonoBehaviour
         }
 
         // Destroy offscreen cars
-        if (transform.position.x < -75f)
+        if (transform.position.x < -200f)
             Destroy(gameObject);
     }
 
@@ -50,6 +50,6 @@ public class TrafficCar : MonoBehaviour
         movementEnabled = false;
 
         // (Optional) loosen drag so the wreck reacts more dramatically
-        rb.linearDamping = 0.1f; 
+        rb.linearDamping = 0.1f;
     }
 }

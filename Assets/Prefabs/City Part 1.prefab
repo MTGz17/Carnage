@@ -10693,9 +10693,9 @@ MonoBehaviour:
   dragRange: {x: 0, y: 0}
   minSpawnDelay: 0.25
   maxSpawnDelay: 0.5
-  spawnXRange: {x: 78, y: 90}
-  spawnY: 0.47
-  spawnZRange: {x: 90, y: 107}
+  spawnXRange: {x: 40, y: 67}
+  spawnY: 1.5
+  spawnZRange: {x: 207, y: 215}
   randomRotation: 1
   rotationYRange: {x: -10, y: 10}
 --- !u!1 &7428604697630311686

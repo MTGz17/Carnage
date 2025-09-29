@@ -16,7 +16,10 @@ public class TrafficSpawner : MonoBehaviour
     [Header("Spawn Position Ranges")]
     public Vector2 spawnXRange = new Vector2(10f, 15f);
     public float spawnY = 0.45f;
-    public Vector2 spawnZRange = new Vector2(30f, 35f);
+
+    // Two possible Z ranges
+    public Vector2 spawnZRange1 = new Vector2(30f, 35f);
+    public Vector2 spawnZRange2 = new Vector2(-35f, -30f);
 
     [Header("Optional Rotation")]
     public bool randomRotation = true;
@@ -42,11 +45,14 @@ public class TrafficSpawner : MonoBehaviour
             if (carCollider != null)
                 spawnHeight += carCollider.bounds.extents.y;
 
+            // Pick which Z range to use
+            Vector2 chosenZRange = (Random.value < 0.5f) ? spawnZRange1 : spawnZRange2;
+
             // Random spawn position
             Vector3 spawnPos = new Vector3(
                 Random.Range(spawnXRange.x, spawnXRange.y),
                 spawnHeight,
-                Random.Range(spawnZRange.x, spawnZRange.y)
+                Random.Range(chosenZRange.x, chosenZRange.y)
             );
 
             // Instantiate car

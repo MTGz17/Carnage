@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Score
+  - RoadSpawn
   layers:
   - Default
   - TransparentFX

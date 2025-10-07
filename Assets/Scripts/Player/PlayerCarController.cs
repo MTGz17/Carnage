@@ -17,6 +17,11 @@ public class PlayerCarController : MonoBehaviour
     [SerializeField] private Transform backLeftWheelTransform;
     [SerializeField] private Transform backRightWheelTransform;
 
+    [SerializeField] private float baseMaxSpeed = 35.7632f;
+    [SerializeField] private float boostIncrement = 5f;
+
+    private int boostCount = 0;
+
     private InputAction moveAction;
     private Rigidbody rb;
 
@@ -31,7 +36,7 @@ public class PlayerCarController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         rb.useGravity = true;
-        rb.centerOfMass = new Vector3(0f, 0, 0f);
+        rb.centerOfMass = new Vector3(0f, 0f, 0f);
     }
 
     private void FixedUpdate()
@@ -39,6 +44,7 @@ public class PlayerCarController : MonoBehaviour
         GetInput();
         HandleMotor();
         HandleSteering();
+        CapSpeed();
         UpdateWheels();
     }
 
@@ -50,8 +56,8 @@ public class PlayerCarController : MonoBehaviour
 
     private void HandleMotor()
     {
-        frontLeftWheelCollider.motorTorque = -input.y * motorForce;
-        frontRightWheelCollider.motorTorque = -input.y * motorForce;
+        frontLeftWheelCollider.motorTorque = input.y * motorForce;
+        frontRightWheelCollider.motorTorque = input.y * motorForce;
     }
 
     private void HandleSteering()
@@ -71,11 +77,35 @@ public class PlayerCarController : MonoBehaviour
         wheelTransform.rotation = rot;
     }
 
+    private void CapSpeed()
+    {
+        float currentMaxSpeed = baseMaxSpeed + boostCount * boostIncrement;
+        Vector3 horizontalVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
+        float currentSpeed = horizontalVelocity.magnitude;
+
+        if (boostCount > 0 && currentSpeed < baseMaxSpeed)
+        {
+            boostCount = 0;
+            currentMaxSpeed = baseMaxSpeed;
+        }
+
+        if (boostCount == 0 && currentSpeed > baseMaxSpeed)
+        {
+            Vector3 limitedVelocity = horizontalVelocity.normalized * baseMaxSpeed;
+            rb.linearVelocity = new Vector3(limitedVelocity.x, rb.linearVelocity.y, limitedVelocity.z);
+        }
+    }
+
     private void UpdateWheels()
     {
         UpdateSingleWheel(frontLeftWheelCollider, frontLeftWheelTransform);
         UpdateSingleWheel(frontRightWheelCollider, frontRightWheelTransform);
         UpdateSingleWheel(backLeftWheelCollider, backLeftWheelTransform);
         UpdateSingleWheel(backRightWheelCollider, backRightWheelTransform);
+    }
+
+    public void BoostSpeed()
+    {
+        boostCount++;
     }
 }

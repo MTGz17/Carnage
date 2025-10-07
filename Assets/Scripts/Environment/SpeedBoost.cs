@@ -6,10 +6,11 @@ public class SpeedBoost : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            PlayerMovement playerMovement = other.GetComponent<PlayerMovement>();
-            if (playerMovement != null)
+            PlayerCarController playerCar = other.GetComponent<PlayerCarController>();
+            if (playerCar != null)
             {
-                playerMovement.BoostSpeed();
+                playerCar.BoostSpeed();
+                Destroy(gameObject);
             }
         }
     }

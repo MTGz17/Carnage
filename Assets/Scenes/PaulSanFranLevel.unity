@@ -349,6 +349,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skyline R34
       objectReference: {fileID: 0}
+    - target: {fileID: 2806729125189435677, guid: ab06dd2426ffca94a8c5244ba7911f07, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2882631568701786292, guid: ab06dd2426ffca94a8c5244ba7911f07, type: 3}
       propertyPath: m_Size.x
       value: 300

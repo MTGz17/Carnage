@@ -8720,7 +8720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RandomSpawner
   prefabs:
-  - {fileID: 1875338222041798171, guid: 85c4d8fa63f1f184691c47911e6da7aa, type: 3}
+  - {fileID: 5597262564647261829, guid: ab19a707e548a3047835302992712d0a, type: 3}
 --- !u!1 &5766800594582766644
 GameObject:
   m_ObjectHideFlags: 0

@@ -4248,7 +4248,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RandomSpawner
   prefabs:
-  - {fileID: 5597262564647261829, guid: ab19a707e548a3047835302992712d0a, type: 3}
+  - {fileID: 6515347657689567269, guid: 4b48969c71e863940b02961558b5449e, type: 3}
+  - {fileID: 2581577946677898242, guid: c7383f8025f7f964e8477ef62b2a2f8d, type: 3}
 --- !u!1 &3893841814707545421
 GameObject:
   m_ObjectHideFlags: 0
@@ -8064,7 +8065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861e0d0b47ca7bc43807291da3e55c27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SectionGenerator
-  roadSection: {fileID: 0}
+  roadSections: []
 --- !u!1 &6428844852469333450
 GameObject:
   m_ObjectHideFlags: 0

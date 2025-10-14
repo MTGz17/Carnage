@@ -45,7 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RandomSpawner
   prefabs:
-  - {fileID: 5597262564647261829, guid: ab19a707e548a3047835302992712d0a, type: 3}
+  - {fileID: 5225492153360058049, guid: f2547651e037e594980baf0f081830c1, type: 3}
+  - {fileID: 2335368008990499414, guid: 83946c781626da84d93de385a8a43a74, type: 3}
+  - {fileID: 7381461345374902711, guid: a20cd6bf37227984d886798d70442098, type: 3}
 --- !u!1 &78679004544607087
 GameObject:
   m_ObjectHideFlags: 0
@@ -2614,7 +2616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RandomSpawner
   prefabs:
   - {fileID: 276868590117304368, guid: 7ba75fca2496d254d8fcfe8019f0b6f0, type: 3}
-  - {fileID: 5834611581612471540, guid: adfb717883f811240988ad2d5962d3c6, type: 3}
+  - {fileID: 5829868395687434978, guid: adfb717883f811240988ad2d5962d3c6, type: 3}
 --- !u!1 &2255659569548234940
 GameObject:
   m_ObjectHideFlags: 0
@@ -4348,7 +4350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RandomSpawner
   prefabs:
   - {fileID: 276868590117304368, guid: 7ba75fca2496d254d8fcfe8019f0b6f0, type: 3}
-  - {fileID: 5834611581612471540, guid: adfb717883f811240988ad2d5962d3c6, type: 3}
+  - {fileID: 5829868395687434978, guid: adfb717883f811240988ad2d5962d3c6, type: 3}
 --- !u!1 &3275893947647911207
 GameObject:
   m_ObjectHideFlags: 0
@@ -7389,7 +7391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RandomSpawner
   prefabs:
   - {fileID: 276868590117304368, guid: 7ba75fca2496d254d8fcfe8019f0b6f0, type: 3}
-  - {fileID: 5834611581612471540, guid: adfb717883f811240988ad2d5962d3c6, type: 3}
+  - {fileID: 5829868395687434978, guid: adfb717883f811240988ad2d5962d3c6, type: 3}
 --- !u!1 &5415522444959312846
 GameObject:
   m_ObjectHideFlags: 0
@@ -7727,7 +7729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RandomSpawner
   prefabs:
   - {fileID: 276868590117304368, guid: 7ba75fca2496d254d8fcfe8019f0b6f0, type: 3}
-  - {fileID: 5834611581612471540, guid: adfb717883f811240988ad2d5962d3c6, type: 3}
+  - {fileID: 5829868395687434978, guid: adfb717883f811240988ad2d5962d3c6, type: 3}
 --- !u!1 &6015564590192524924
 GameObject:
   m_ObjectHideFlags: 0
@@ -8419,7 +8421,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861e0d0b47ca7bc43807291da3e55c27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SectionGenerator
-  roadSection: {fileID: 2581577946677898242, guid: c7383f8025f7f964e8477ef62b2a2f8d, type: 3}
+  roadSections:
+  - {fileID: 6515347657689567269}
+  - {fileID: 2581577946677898242, guid: c7383f8025f7f964e8477ef62b2a2f8d, type: 3}
 --- !u!1 &6255487636764474964
 GameObject:
   m_ObjectHideFlags: 0

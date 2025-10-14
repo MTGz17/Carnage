@@ -26,7 +26,7 @@ public class ScoreManager : MonoBehaviour
         UpdateScoreUI();
     }
 
-    private void UpdateScoreUI()
+    public void UpdateScoreUI()
     {
         if (scoreText != null)
         {

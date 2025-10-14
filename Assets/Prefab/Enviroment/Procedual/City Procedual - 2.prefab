@@ -6355,7 +6355,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861e0d0b47ca7bc43807291da3e55c27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SectionGenerator
-  roadSection: {fileID: 6515347657689567269, guid: 4b48969c71e863940b02961558b5449e, type: 3}
+  roadSections:
+  - {fileID: 6515347657689567269, guid: 4b48969c71e863940b02961558b5449e, type: 3}
+  - {fileID: 2581577946677898242}
 --- !u!1 &3965452145321258359
 GameObject:
   m_ObjectHideFlags: 0
@@ -6402,7 +6404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RandomSpawner
   prefabs:
   - {fileID: 276868590117304368, guid: 7ba75fca2496d254d8fcfe8019f0b6f0, type: 3}
-  - {fileID: 5834611581612471540, guid: adfb717883f811240988ad2d5962d3c6, type: 3}
+  - {fileID: 5829868395687434978, guid: adfb717883f811240988ad2d5962d3c6, type: 3}
 --- !u!1 &4125257897761500593
 GameObject:
   m_ObjectHideFlags: 0
@@ -8720,7 +8722,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RandomSpawner
   prefabs:
-  - {fileID: 5597262564647261829, guid: ab19a707e548a3047835302992712d0a, type: 3}
+  - {fileID: 5225492153360058049, guid: f2547651e037e594980baf0f081830c1, type: 3}
+  - {fileID: 2335368008990499414, guid: 83946c781626da84d93de385a8a43a74, type: 3}
+  - {fileID: 7381461345374902711, guid: a20cd6bf37227984d886798d70442098, type: 3}
 --- !u!1 &5766800594582766644
 GameObject:
   m_ObjectHideFlags: 0
@@ -9751,7 +9755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RandomSpawner
   prefabs:
   - {fileID: 276868590117304368, guid: 7ba75fca2496d254d8fcfe8019f0b6f0, type: 3}
-  - {fileID: 5834611581612471540, guid: adfb717883f811240988ad2d5962d3c6, type: 3}
+  - {fileID: 5829868395687434978, guid: adfb717883f811240988ad2d5962d3c6, type: 3}
 --- !u!1 &7196222163836099472
 GameObject:
   m_ObjectHideFlags: 0
@@ -10499,7 +10503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RandomSpawner
   prefabs:
   - {fileID: 276868590117304368, guid: 7ba75fca2496d254d8fcfe8019f0b6f0, type: 3}
-  - {fileID: 5834611581612471540, guid: adfb717883f811240988ad2d5962d3c6, type: 3}
+  - {fileID: 5829868395687434978, guid: adfb717883f811240988ad2d5962d3c6, type: 3}
 --- !u!1 &7860280250992945479
 GameObject:
   m_ObjectHideFlags: 0
@@ -11428,7 +11432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RandomSpawner
   prefabs:
   - {fileID: 276868590117304368, guid: 7ba75fca2496d254d8fcfe8019f0b6f0, type: 3}
-  - {fileID: 5834611581612471540, guid: adfb717883f811240988ad2d5962d3c6, type: 3}
+  - {fileID: 5829868395687434978, guid: adfb717883f811240988ad2d5962d3c6, type: 3}
 --- !u!1 &8261923588799643399
 GameObject:
   m_ObjectHideFlags: 0

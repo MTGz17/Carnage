@@ -125,3 +125,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CurrencyAdd
   pointsOnDestroy: 10
+  cashSound: {fileID: 8300000, guid: 7daba62159164294883f44870aa982b0, type: 3}

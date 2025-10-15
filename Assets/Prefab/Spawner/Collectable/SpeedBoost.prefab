@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4638394536829701953}
   - component: {fileID: 7663707175251562134}
   - component: {fileID: 6055350640105456212}
-  - component: {fileID: 2892462830493295602}
   - component: {fileID: 208263886717267404}
+  - component: {fileID: 2892462830493295602}
   m_Layer: 0
   m_Name: SpeedBoost
   m_TagString: Untagged
@@ -91,18 +91,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2892462830493295602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5225492153360058049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da7a00e2ca8531240b68dd9f7ab1d82a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpeedBoost
 --- !u!65 &208263886717267404
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -124,3 +112,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.8774826, y: 0.52891594, z: 0.17000014}
   m_Center: {x: 0.08755574, y: 0.39650914, z: -0.000000014901161}
+--- !u!114 &2892462830493295602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5225492153360058049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da7a00e2ca8531240b68dd9f7ab1d82a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpeedBoost
+  speedPowerSound: {fileID: 8300000, guid: 924efae5a2c3bcc458b5521c056992a2, type: 3}

@@ -125,3 +125,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreMult
   multiplier: 2
+  duration: 15
+  scoreMultiplierSound: {fileID: 8300000, guid: f006b8d04f2c0664ebf191c4f623ae39, type: 3}

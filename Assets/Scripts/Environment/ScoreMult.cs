@@ -4,17 +4,22 @@ public class ScoreMult : MonoBehaviour
 {
     [SerializeField] private int multiplier = 2;
     [SerializeField] private float duration = 15f;
+    [SerializeField] private AudioClip scoreMultiplierSound;
+
+    private bool hasTriggered;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            if (ScoreManager.Instance != null)
-            {
-                ScoreManager.Instance.ActivateMultiplier(multiplier, duration);
-            }
+        if (hasTriggered || !other.CompareTag("Player")) return;
+        hasTriggered = true;
 
-            Destroy(gameObject);
-        }
+        ScoreManager.Instance?.ActivateMultiplier(multiplier, duration);
+
+        if (scoreMultiplierSound)
+            AudioSource.PlayClipAtPoint(scoreMultiplierSound, transform.position);
+
+        GetComponent<Renderer>().enabled = false;
+
+        Destroy(gameObject, scoreMultiplierSound ? scoreMultiplierSound.length : 0f);
     }
 }

@@ -3,6 +3,7 @@ using UnityEngine;
 public class ScoreMult : MonoBehaviour
 {
     [SerializeField] private int multiplier = 2;
+    [SerializeField] private float duration = 15f;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -10,11 +11,9 @@ public class ScoreMult : MonoBehaviour
         {
             if (ScoreManager.Instance != null)
             {
-                ScoreManager.Instance.score *= multiplier;
-
-                ScoreManager.Instance.UpdateScoreUI();
+                ScoreManager.Instance.ActivateMultiplier(multiplier, duration);
             }
-            
+
             Destroy(gameObject);
         }
     }

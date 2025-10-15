@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5031597253633638055}
   - component: {fileID: 5320957773287749781}
   - component: {fileID: 7979180759397378326}
-  - component: {fileID: -4536978351411868053}
+  - component: {fileID: 2604132249009930132}
   m_Layer: 0
   m_Name: MoneyToken
   m_TagString: Untagged
@@ -112,7 +112,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1118925, y: 1.1007495, z: 0.18800014}
   m_Center: {x: -0.0071185827, y: 0.4582721, z: 0.04412964}
---- !u!114 &-4536978351411868053
+--- !u!114 &2604132249009930132
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7381461345374902711}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eadc604d8b7153f45b8c39739c87594c, type: 3}
+  m_Script: {fileID: 11500000, guid: e99e9e44cda2383479c1194508d593f5, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ScoreAdd
-  pointsOnDestroy: 10000
+  m_EditorClassIdentifier: Assembly-CSharp::CurrencyAdd
+  pointsOnDestroy: 10

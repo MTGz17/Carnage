@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7030227126096620247
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1859550933621216428, guid: ace096beb39b2664588ed31f5e17b441, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2bcd4902d967bac4c990a68e2a5341d0, type: 2}
+    - target: {fileID: 4176282594120342069, guid: ace096beb39b2664588ed31f5e17b441, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f3365ccdfcf7b59458b2409683efe91e, type: 2}
+    - target: {fileID: 5396130975000678662, guid: ace096beb39b2664588ed31f5e17b441, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2bcd4902d967bac4c990a68e2a5341d0, type: 2}
+    - target: {fileID: 5406457142990184929, guid: ace096beb39b2664588ed31f5e17b441, type: 3}
+      propertyPath: m_Name
+      value: Apartments_Combo_ Aqua and DarkGreen Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146388742614070777, guid: ace096beb39b2664588ed31f5e17b441, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -105.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146388742614070777, guid: ace096beb39b2664588ed31f5e17b441, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 35.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146388742614070777, guid: ace096beb39b2664588ed31f5e17b441, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -78.10152
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146388742614070777, guid: ace096beb39b2664588ed31f5e17b441, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146388742614070777, guid: ace096beb39b2664588ed31f5e17b441, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146388742614070777, guid: ace096beb39b2664588ed31f5e17b441, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146388742614070777, guid: ace096beb39b2664588ed31f5e17b441, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146388742614070777, guid: ace096beb39b2664588ed31f5e17b441, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146388742614070777, guid: ace096beb39b2664588ed31f5e17b441, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146388742614070777, guid: ace096beb39b2664588ed31f5e17b441, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7961423632983304798, guid: ace096beb39b2664588ed31f5e17b441, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f3365ccdfcf7b59458b2409683efe91e, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ace096beb39b2664588ed31f5e17b441, type: 3}

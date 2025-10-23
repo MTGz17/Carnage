@@ -1051,7 +1051,10 @@ PrefabInstance:
       value: Paul City Part 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 422378541366789024, guid: f5b70bc0dd7d3844fa7e62324ca109ac, type: 3}
+    - {fileID: 1278481140065107783, guid: f5b70bc0dd7d3844fa7e62324ca109ac, type: 3}
+    - {fileID: 4130497729332701098, guid: f5b70bc0dd7d3844fa7e62324ca109ac, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5b70bc0dd7d3844fa7e62324ca109ac, type: 3}
@@ -1299,7 +1302,7 @@ Transform:
   m_GameObject: {fileID: 1690643628}
   serializedVersion: 2
   m_LocalRotation: {x: 0.057998884, y: -0.000000014452363, z: 8.396343e-10, w: 0.99831665}
-  m_LocalPosition: {x: -2.9, y: 2.5, z: -3.27}
+  m_LocalPosition: {x: -2.43, y: 2.47, z: 2.6599998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1390,7 +1393,7 @@ Transform:
   m_GameObject: {fileID: 1700521302}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.9, y: 0, z: 3.73}
+  m_LocalPosition: {x: -2.43, y: -0.03, z: 9.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

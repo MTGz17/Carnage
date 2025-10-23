@@ -1,0 +1,159 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8464995150177821463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5472817514796830654}
+  m_Layer: 0
+  m_Name: Apartments_Combo_Red Blue Aqua DarkGreen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5472817514796830654
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8464995150177821463}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -106.04004, y: 35.27, z: -79.86725}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 252801847239591704}
+  - {fileID: 1344369699905898247}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &507262128402549749
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5472817514796830654}
+    m_Modifications:
+    - target: {fileID: 326521723626589421, guid: 0c579876d5097074fb8c567e8145eb08, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.09996033
+      objectReference: {fileID: 0}
+    - target: {fileID: 326521723626589421, guid: 0c579876d5097074fb8c567e8145eb08, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 326521723626589421, guid: 0c579876d5097074fb8c567e8145eb08, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -22.332748
+      objectReference: {fileID: 0}
+    - target: {fileID: 326521723626589421, guid: 0c579876d5097074fb8c567e8145eb08, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 326521723626589421, guid: 0c579876d5097074fb8c567e8145eb08, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 326521723626589421, guid: 0c579876d5097074fb8c567e8145eb08, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 326521723626589421, guid: 0c579876d5097074fb8c567e8145eb08, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 326521723626589421, guid: 0c579876d5097074fb8c567e8145eb08, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 326521723626589421, guid: 0c579876d5097074fb8c567e8145eb08, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 326521723626589421, guid: 0c579876d5097074fb8c567e8145eb08, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7124271681200579256, guid: 0c579876d5097074fb8c567e8145eb08, type: 3}
+      propertyPath: m_Name
+      value: Apartments_Combo_ Red and Blue
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0c579876d5097074fb8c567e8145eb08, type: 3}
+--- !u!4 &252801847239591704 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 326521723626589421, guid: 0c579876d5097074fb8c567e8145eb08, type: 3}
+  m_PrefabInstance: {fileID: 507262128402549749}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2770858033101002793
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5472817514796830654}
+    m_Modifications:
+    - target: {fileID: 3069197041562307382, guid: f69396bd2025167469f518d16232ec43, type: 3}
+      propertyPath: m_Name
+      value: Apartments_Combo_ Aqua and DarkGreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3808982803726819118, guid: f69396bd2025167469f518d16232ec43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3808982803726819118, guid: f69396bd2025167469f518d16232ec43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3808982803726819118, guid: f69396bd2025167469f518d16232ec43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3808982803726819118, guid: f69396bd2025167469f518d16232ec43, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3808982803726819118, guid: f69396bd2025167469f518d16232ec43, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3808982803726819118, guid: f69396bd2025167469f518d16232ec43, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3808982803726819118, guid: f69396bd2025167469f518d16232ec43, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3808982803726819118, guid: f69396bd2025167469f518d16232ec43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3808982803726819118, guid: f69396bd2025167469f518d16232ec43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3808982803726819118, guid: f69396bd2025167469f518d16232ec43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f69396bd2025167469f518d16232ec43, type: 3}
+--- !u!4 &1344369699905898247 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3808982803726819118, guid: f69396bd2025167469f518d16232ec43, type: 3}
+  m_PrefabInstance: {fileID: 2770858033101002793}
+  m_PrefabAsset: {fileID: 0}

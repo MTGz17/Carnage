@@ -721,6 +721,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 414958417}
   m_CullTransparentMesh: 1
+--- !u!1 &556582145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 556582146}
+  m_Layer: 0
+  m_Name: EndPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &556582146
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556582145}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.43712, y: 0, z: 196.61}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &599530299
 GameObject:
   m_ObjectHideFlags: 0
@@ -3128,6 +3159,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5829868395687434978, guid: adfb717883f811240988ad2d5962d3c6, type: 3}
     - target: {fileID: 8784629826087578725, guid: 7b2d58b66db2b644c95b800ebcafe8c0, type: 3}
+      propertyPath: endPoint
+      value: 
+      objectReference: {fileID: 556582146}
+    - target: {fileID: 8784629826087578725, guid: 7b2d58b66db2b644c95b800ebcafe8c0, type: 3}
       propertyPath: roadSections.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -3230,3 +3265,4 @@ SceneRoots:
   - {fileID: 330771017}
   - {fileID: 1433200333}
   - {fileID: 1529124361}
+  - {fileID: 556582146}

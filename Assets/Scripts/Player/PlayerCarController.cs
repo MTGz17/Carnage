@@ -57,13 +57,50 @@ public class PlayerCarController : MonoBehaviour
 
     private void HandleMotor()
     {
-        frontLeftWheelCollider.motorTorque = input.y * motorForce;
-        frontRightWheelCollider.motorTorque = input.y * motorForce;
+        float motorInput = input.y;
+        float currentSpeed = Vector3.Dot(rb.linearVelocity, transform.forward);
+
+        float lightBrakeTorque = 4000f;
+        float heavyBrakeTorque = 160000f;
+        float brakeTorque = 0f;
+
+        frontLeftWheelCollider.motorTorque = 0f;
+        frontRightWheelCollider.motorTorque = 0f;
+
+        if (Mathf.Abs(motorInput) < 0.1f)
+        {
+            brakeTorque = lightBrakeTorque;
+        }
+        else
+        {
+            if ((currentSpeed > 2f && motorInput < 0f) || (currentSpeed < -2f && motorInput > 0f))
+            {
+                brakeTorque = heavyBrakeTorque;
+            }
+            else
+            {
+                brakeTorque = 0f;
+                frontLeftWheelCollider.motorTorque = motorInput * motorForce;
+                frontRightWheelCollider.motorTorque = motorInput * motorForce;
+            }
+        }
+
+        frontLeftWheelCollider.brakeTorque = brakeTorque;
+        frontRightWheelCollider.brakeTorque = brakeTorque;
+        backLeftWheelCollider.brakeTorque = brakeTorque;
+        backRightWheelCollider.brakeTorque = brakeTorque;
     }
 
     private void HandleSteering()
     {
-        currentSteerAngle = maxSteerAngle * input.x;
+        Vector3 horizontalVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
+        float currentSpeed = horizontalVelocity.magnitude;
+
+        float speedFactor = Mathf.Clamp01(currentSpeed / speedCap);
+        float steerReduction = Mathf.Lerp(1f, 0.3f, speedFactor);
+
+        currentSteerAngle = maxSteerAngle * input.x * steerReduction;
+
         frontLeftWheelCollider.steerAngle = currentSteerAngle;
         frontRightWheelCollider.steerAngle = currentSteerAngle;
     }

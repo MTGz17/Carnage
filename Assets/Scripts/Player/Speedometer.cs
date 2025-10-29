@@ -13,12 +13,12 @@ public class Speedometer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(rb != null || speedometer != null)
-        {
-            float speedMPS = rb.linearVelocity.magnitude;
-            int speedMPH = Mathf.RoundToInt(speedMPS * 2.23694f);
+        if (rb == null || speedometer == null)
+            return;
 
-            speedometer.text = speedMPH + " MPH";
-        }
+        float speedMPS = rb.linearVelocity.magnitude;
+        int speedMPH = Mathf.RoundToInt(speedMPS * 2.23694f);
+
+        speedometer.text = speedMPH + " MPH";
     }
 }

@@ -4,8 +4,8 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerCarController : MonoBehaviour
 {
-    [SerializeField] private float motorForce = 100f;
-    [SerializeField] private float maxSteerAngle = 30f;
+    [SerializeField] private float motorForce = 10000f;
+    [SerializeField] private float maxSteerAngle = 15f;
 
     [SerializeField] private WheelCollider frontLeftWheelCollider;
     [SerializeField] private WheelCollider frontRightWheelCollider;
@@ -17,24 +17,22 @@ public class PlayerCarController : MonoBehaviour
     [SerializeField] private Transform backLeftWheelTransform;
     [SerializeField] private Transform backRightWheelTransform;
 
-    [SerializeField] private float baseMaxSpeed = 35.7632f;
-    [SerializeField] private float boostIncrement = 5f;
+    [SerializeField] private float boostForce = 10000f;
 
-    private int boostCount = 0;
+    [SerializeField] private float speedCap = 53.6448f;
+    [SerializeField] private float boostOverrideDuration = 2f;
+
+    private float speedCapOverrideTimer = 0f;
 
     private InputAction moveAction;
     private Rigidbody rb;
-
     private Vector2 input;
-
     private float currentSteerAngle;
-
 
     private void Start()
     {
         moveAction = GetComponent<PlayerInput>().actions["Move"];
         rb = GetComponent<Rigidbody>();
-
         rb.useGravity = true;
         rb.centerOfMass = new Vector3(0f, 0f, 0f);
     }
@@ -44,6 +42,10 @@ public class PlayerCarController : MonoBehaviour
         GetInput();
         HandleMotor();
         HandleSteering();
+
+        if (speedCapOverrideTimer > 0f)
+            speedCapOverrideTimer -= Time.fixedDeltaTime;
+
         CapSpeed();
         UpdateWheels();
     }
@@ -51,48 +53,70 @@ public class PlayerCarController : MonoBehaviour
     private void GetInput()
     {
         input = moveAction.ReadValue<Vector2>();
-
     }
 
     private void HandleMotor()
     {
-        frontLeftWheelCollider.motorTorque = input.y * motorForce;
-        frontRightWheelCollider.motorTorque = input.y * motorForce;
+        float motorInput = input.y;
+        float currentSpeed = Vector3.Dot(rb.linearVelocity, transform.forward);
+
+        float lightBrakeTorque = 4000f;
+        float heavyBrakeTorque = 160000f;
+        float brakeTorque = 0f;
+
+        frontLeftWheelCollider.motorTorque = 0f;
+        frontRightWheelCollider.motorTorque = 0f;
+
+        if (Mathf.Abs(motorInput) < 0.1f)
+        {
+            brakeTorque = lightBrakeTorque;
+        }
+        else
+        {
+            if ((currentSpeed > 2f && motorInput < 0f) || (currentSpeed < -2f && motorInput > 0f))
+            {
+                brakeTorque = heavyBrakeTorque;
+            }
+            else
+            {
+                brakeTorque = 0f;
+                frontLeftWheelCollider.motorTorque = motorInput * motorForce;
+                frontRightWheelCollider.motorTorque = motorInput * motorForce;
+            }
+        }
+
+        frontLeftWheelCollider.brakeTorque = brakeTorque;
+        frontRightWheelCollider.brakeTorque = brakeTorque;
+        backLeftWheelCollider.brakeTorque = brakeTorque;
+        backRightWheelCollider.brakeTorque = brakeTorque;
     }
 
     private void HandleSteering()
     {
-        currentSteerAngle = maxSteerAngle * input.x;
+        Vector3 horizontalVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
+        float currentSpeed = horizontalVelocity.magnitude;
+
+        float speedFactor = Mathf.Clamp01(currentSpeed / speedCap);
+        float steerReduction = Mathf.Lerp(1f, 0.3f, speedFactor);
+
+        currentSteerAngle = maxSteerAngle * input.x * steerReduction;
 
         frontLeftWheelCollider.steerAngle = currentSteerAngle;
         frontRightWheelCollider.steerAngle = currentSteerAngle;
     }
 
-    private void UpdateSingleWheel(WheelCollider wheelCollider, Transform wheelTransform)
-    {
-        Vector3 pos;
-        Quaternion rot;
-        wheelCollider.GetWorldPose(out pos, out rot);
-        wheelTransform.position = pos;
-        wheelTransform.rotation = rot;
-    }
-
     private void CapSpeed()
     {
-        float currentMaxSpeed = baseMaxSpeed + boostCount * boostIncrement;
-        Vector3 horizontalVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
+        if (speedCapOverrideTimer > 0f)
+            return;
+
+        Vector3 horizontalVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
         float currentSpeed = horizontalVelocity.magnitude;
 
-        if (boostCount > 0 && currentSpeed < baseMaxSpeed)
+        if (currentSpeed > speedCap)
         {
-            boostCount = 0;
-            currentMaxSpeed = baseMaxSpeed;
-        }
-
-        if (boostCount == 0 && currentSpeed > baseMaxSpeed)
-        {
-            Vector3 limitedVelocity = horizontalVelocity.normalized * baseMaxSpeed;
-            rb.linearVelocity = new Vector3(limitedVelocity.x, rb.linearVelocity.y, limitedVelocity.z);
+            Vector3 clampedVelocity = horizontalVelocity.normalized * speedCap;
+            rb.linearVelocity = new Vector3(clampedVelocity.x, rb.linearVelocity.y, clampedVelocity.z);
         }
     }
 
@@ -104,8 +128,20 @@ public class PlayerCarController : MonoBehaviour
         UpdateSingleWheel(backRightWheelCollider, backRightWheelTransform);
     }
 
+    private void UpdateSingleWheel(WheelCollider wheelCollider, Transform wheelTransform)
+    {
+        Vector3 pos;
+        Quaternion rot;
+        wheelCollider.GetWorldPose(out pos, out rot);
+        wheelTransform.position = pos;
+        wheelTransform.rotation = rot;
+    }
+
     public void BoostSpeed()
     {
-        boostCount++;
+        Vector3 boostDirection = transform.forward;
+        rb.AddForce(boostDirection * boostForce, ForceMode.Impulse);
+
+        speedCapOverrideTimer = boostOverrideDuration;
     }
 }

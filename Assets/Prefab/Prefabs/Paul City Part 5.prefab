@@ -6092,6 +6092,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5610346364517264010}
+  - component: {fileID: 5113157265668626462}
   m_Layer: 0
   m_Name: Paul City Part 5
   m_TagString: Untagged
@@ -6141,6 +6142,27 @@ Transform:
   - {fileID: 395994382301552315}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5113157265668626462
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7604466492866326807}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: -75, y: 0, z: 15}
 --- !u!1 &7746656585089690731
 GameObject:
   m_ObjectHideFlags: 0
@@ -6882,6 +6904,7 @@ MonoBehaviour:
   - {fileID: 8406819817558347801, guid: 6542be40b6287a34b80848916dd330c6, type: 3}
   - {fileID: 2494281441108408674, guid: cec91f2e084d7d24ca0a930ff8fc2c29, type: 3}
   - {fileID: 3323380715530873158, guid: 1087efb0042c6304b8aca4e53bfdaa2f, type: 3}
+  specialSection: {fileID: 1434817898628265088, guid: bf022c83910b9b146bbb7b2868766fca, type: 3}
   endPoint: {fileID: 5734211971474016773}
 --- !u!1 &8393874707966855843
 GameObject:

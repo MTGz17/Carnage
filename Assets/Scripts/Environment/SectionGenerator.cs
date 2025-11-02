@@ -3,8 +3,10 @@ using UnityEngine;
 public class SectionGenerator : MonoBehaviour
 {
     [SerializeField] private GameObject[] roadSections;
+    [SerializeField] private GameObject specialSection;
     [SerializeField] private Transform endPoint;
 
+    private static int sectionCount = 0;
     private bool hasSpawned = false;
 
     private void OnTriggerEnter(Collider other)
@@ -12,8 +14,20 @@ public class SectionGenerator : MonoBehaviour
         if (hasSpawned || !other.CompareTag("Player")) return;
         hasSpawned = true;
 
-        int randomIndex = Random.Range(0, roadSections.Length);
-        GameObject selectedSection = roadSections[randomIndex];
+        sectionCount++;
+        Debug.Log("Section Count: " + sectionCount);
+
+        GameObject selectedSection;
+
+        if (sectionCount % 3 == 0)
+        {
+            selectedSection = specialSection;
+        }
+        else
+        {
+            int randomIndex = Random.Range(0, roadSections.Length);
+            selectedSection = roadSections[randomIndex];
+        }
 
         GameObject newSection = Instantiate(selectedSection);
 
@@ -22,7 +36,7 @@ public class SectionGenerator : MonoBehaviour
 
         if (newStart == null || newEnd == null)
         {
-            Debug.LogError($"StartPoint or EndPoint missing on {selectedSection.name}");
+            Debug.Log("StartPoint or EndPoint missing");
             return;
         }
 

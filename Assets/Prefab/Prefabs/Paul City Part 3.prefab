@@ -1899,6 +1899,7 @@ MonoBehaviour:
   - {fileID: 8406819817558347801, guid: 6542be40b6287a34b80848916dd330c6, type: 3}
   - {fileID: 3323380715530873158, guid: 1087efb0042c6304b8aca4e53bfdaa2f, type: 3}
   - {fileID: 7604466492866326807, guid: bfebb3f6f777f594bbca6d2d275e22e3, type: 3}
+  specialSection: {fileID: 1434817898628265088, guid: bf022c83910b9b146bbb7b2868766fca, type: 3}
   endPoint: {fileID: 4425727443859116647}
 --- !u!1 &2082618981967459600
 GameObject:
@@ -2324,6 +2325,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3685284993763939492}
+  - component: {fileID: 3056609784842787984}
   m_Layer: 0
   m_Name: Paul City Part 3
   m_TagString: Untagged
@@ -2376,6 +2378,27 @@ Transform:
   - {fileID: 4425727443859116647}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3056609784842787984
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2494281441108408674}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: -75, y: 0, z: 10}
 --- !u!1 &2514780435323582621
 GameObject:
   m_ObjectHideFlags: 0

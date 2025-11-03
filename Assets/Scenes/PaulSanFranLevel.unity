@@ -404,6 +404,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.58
       objectReference: {fileID: 0}
+    - target: {fileID: 8046148811284839794, guid: 6542be40b6287a34b80848916dd330c6, type: 3}
+      propertyPath: specialSection
+      value: 
+      objectReference: {fileID: 1434817898628265088, guid: bf022c83910b9b146bbb7b2868766fca, type: 3}
     - target: {fileID: 8406819817558347801, guid: 6542be40b6287a34b80848916dd330c6, type: 3}
       propertyPath: m_Name
       value: Paul City Part 1

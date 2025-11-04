@@ -6,11 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/SplashScreen.unity
+    guid: 4cf7965654d023c44aecfddf1a1536fa
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: f2ed5976a94474d45bea10cc728b0cbb
+  - enabled: 1
     path: Assets/Scenes/PaulSanFranLevel.unity
     guid: 97cf4a5fcf1afc1458ed8f0ebdd01164
-  - enabled: 0
-    path: Assets/Scenes/ArtPrototypeMuseum.unity
-    guid: a64adaa7fdc2f7942a9c1a94b606954c
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: 6de5e8064d209b149a82057045390404
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

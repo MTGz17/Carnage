@@ -7,9 +7,9 @@ public class CurrencyDisplay : MonoBehaviour
 
     private void Update()
     {
-        if (CurrencyManager.Instance != null)
+        if (SaveManager.instance != null)
         {
-            currencyText.text = "Cash: " + CurrencyManager.Instance.Currency.ToString();
+            currencyText.text = "Cash: " + SaveManager.instance.currency.ToString();
         }
     }
 }

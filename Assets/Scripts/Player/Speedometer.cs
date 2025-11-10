@@ -9,6 +9,12 @@ public class Speedometer : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+
+        GameObject speedometerObj = GameObject.FindGameObjectWithTag("Speedometer");
+        if (speedometerObj != null)
+        {
+            speedometer = speedometerObj.GetComponent<TextMeshProUGUI>();
+        }
     }
 
     private void FixedUpdate()

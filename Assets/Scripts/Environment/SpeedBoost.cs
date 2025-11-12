@@ -13,6 +13,11 @@ public class SpeedBoost : MonoBehaviour
 
         other.GetComponent<PlayerCarController>()?.BoostSpeed();
 
+        if (ScreenAnimator.Instance != null)
+        {
+            ScreenAnimator.Instance.PlaySpeedAnimation();
+        }
+
         if (speedPowerSound)
             AudioSource.PlayClipAtPoint(speedPowerSound, transform.position);
 

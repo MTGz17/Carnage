@@ -233,7 +233,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RandomSpawner
   prefabs:
   - {fileID: 8345873644474713883, guid: 080e5375dcd6c5b438479624d6f5ce97, type: 3}
-  - {fileID: 7983235013418551603, guid: 9bf8b61c1d6d3d1499818c1a64fe5584, type: 3}
 --- !u!1 &918436229332374280
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,7 +458,7 @@ MonoBehaviour:
   - {fileID: 8406819817558347801, guid: 6542be40b6287a34b80848916dd330c6, type: 3}
   - {fileID: 3323380715530873158, guid: 1087efb0042c6304b8aca4e53bfdaa2f, type: 3}
   - {fileID: 7604466492866326807, guid: bfebb3f6f777f594bbca6d2d275e22e3, type: 3}
-  specialSection: {fileID: 7604466492866326807, guid: a6a2c91ad4c1ec14d85c1ca6b84bd0ba, type: 3}
+  specialSection: {fileID: 8054035082069514954, guid: 06829202f1efafe4fba058eb45ec4fee, type: 3}
   endPoint: {fileID: 4425727443859116647}
 --- !u!1 &2082618981967459600
 GameObject:
@@ -932,7 +931,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RandomSpawner
   prefabs:
   - {fileID: 8345873644474713883, guid: 080e5375dcd6c5b438479624d6f5ce97, type: 3}
-  - {fileID: 7983235013418551603, guid: 9bf8b61c1d6d3d1499818c1a64fe5584, type: 3}
 --- !u!1 &3040989042066646209
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,7 +1232,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RandomSpawner
   prefabs:
   - {fileID: 8345873644474713883, guid: 080e5375dcd6c5b438479624d6f5ce97, type: 3}
-  - {fileID: 7983235013418551603, guid: 9bf8b61c1d6d3d1499818c1a64fe5584, type: 3}
 --- !u!1 &4982554896931878553
 GameObject:
   m_ObjectHideFlags: 0
@@ -1484,7 +1481,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RandomSpawner
   prefabs:
   - {fileID: 8345873644474713883, guid: 080e5375dcd6c5b438479624d6f5ce97, type: 3}
-  - {fileID: 7983235013418551603, guid: 9bf8b61c1d6d3d1499818c1a64fe5584, type: 3}
 --- !u!1 &5782176435300963484
 GameObject:
   m_ObjectHideFlags: 0
@@ -3215,6 +3211,14 @@ PrefabInstance:
     - target: {fileID: 1278633607789590632, guid: 1b5cf431ba943d7478c9f889b789872a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322298118833720034, guid: 1b5cf431ba943d7478c9f889b789872a, type: 3}
+      propertyPath: m_Size.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322298118833720034, guid: 1b5cf431ba943d7478c9f889b789872a, type: 3}
+      propertyPath: m_Center.x
+      value: 4.29
       objectReference: {fileID: 0}
     - target: {fileID: 4411655861024538577, guid: 1b5cf431ba943d7478c9f889b789872a, type: 3}
       propertyPath: m_Name

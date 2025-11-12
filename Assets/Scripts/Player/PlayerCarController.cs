@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Unity.Cinemachine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerCarController : MonoBehaviour
@@ -34,7 +35,18 @@ public class PlayerCarController : MonoBehaviour
         moveAction = GetComponent<PlayerInput>().actions["Move"];
         rb = GetComponent<Rigidbody>();
         rb.useGravity = true;
-        rb.centerOfMass = new Vector3(0f, 0f, 0f);
+        rb.centerOfMass = Vector3.zero;
+
+        CinemachineCamera Cam = Object.FindFirstObjectByType<CinemachineCamera>();
+        if (Cam != null)
+        {
+            Cam.Follow = transform;
+            Cam.LookAt = transform;
+        }
+        else
+        {
+            Debug.LogWarning("No CinemachineCamera found in the scene!");
+        }
     }
 
     private void FixedUpdate()

@@ -15,9 +15,12 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        masterVol.value = PlayerPrefs.GetFloat("MasterVol", 0f);
-        musicVol.value = PlayerPrefs.GetFloat("MusicVol", 0f);
-        sFXVol.value = PlayerPrefs.GetFloat("SFXVol", 0f);
+        if (SaveManager.instance != null)
+        {
+            masterVol.value = SaveManager.instance.masterVolume;
+            musicVol.value = SaveManager.instance.musicVolume;
+            sFXVol.value = SaveManager.instance.sfxVolume;
+        }
 
         ChangeMasterVolume();
         ChangeMusicVolume();
@@ -27,19 +30,34 @@ public class AudioManager : MonoBehaviour
     public void ChangeMasterVolume()
     {
         mainAudioMixer.SetFloat("MasterVol", masterVol.value);
-        PlayerPrefs.SetFloat("MasterVol", masterVol.value);
+
+        if (SaveManager.instance != null)
+        {
+            SaveManager.instance.masterVolume = masterVol.value;
+            SaveManager.instance.Save();
+        }
     }
 
     public void ChangeMusicVolume()
     {
         mainAudioMixer.SetFloat("MusicVol", musicVol.value);
-        PlayerPrefs.SetFloat("MusicVol", musicVol.value);
+
+        if (SaveManager.instance != null)
+        {
+            SaveManager.instance.musicVolume = musicVol.value;
+            SaveManager.instance.Save();
+        }
     }
 
     public void ChangeSFXVolume()
     {
         mainAudioMixer.SetFloat("SFXVol", sFXVol.value);
-        PlayerPrefs.SetFloat("SFXVol", sFXVol.value);
+
+        if (SaveManager.instance != null)
+        {
+            SaveManager.instance.sfxVolume = sFXVol.value;
+            SaveManager.instance.Save();
+        }
     }
 
     public void ButtonSound()

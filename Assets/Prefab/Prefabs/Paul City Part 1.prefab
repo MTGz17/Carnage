@@ -980,7 +980,6 @@ Transform:
   m_Children:
   - {fileID: 5323990026424251898}
   - {fileID: 5729261076000185069}
-  - {fileID: 6158767968232665601}
   - {fileID: 2352122195641156087}
   m_Father: {fileID: 6332153891583250488}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1017,64 +1016,6 @@ Transform:
   - {fileID: 4249837147779308573}
   m_Father: {fileID: 6143986337266628528}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!1 &7427264173861219991
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6158767968232665601}
-  - component: {fileID: 6406036060200717638}
-  m_Layer: 0
-  m_Name: Traffic_Spawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6158767968232665601
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7427264173861219991}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.84872, y: 0, z: 32.20381}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4252442483810590240}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6406036060200717638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7427264173861219991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc00c345f88200d4bb400b7a2d21d640, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TrafficSpawner
-  carPrefabs:
-  - {fileID: 122252003244428139, guid: 7eba120927d3ff540997e48b4a6552e2, type: 3}
-  - {fileID: 3126048284416978353, guid: d7f6f4abe800c554186203e3a7da77a6, type: 3}
-  speedRange: {x: 25, y: 40}
-  massRange: {x: 10, y: 10}
-  dragRange: {x: 0, y: 0}
-  minSpawnDelay: 0.25
-  maxSpawnDelay: 0.5
-  spawnXRange: {x: 40, y: 67}
-  spawnY: 1.5
-  spawnZRange1: {x: 30, y: 35}
-  spawnZRange2: {x: -35, y: -30}
-  randomRotation: 1
-  rotationYRange: {x: -10, y: 10}
 --- !u!1 &7492332874133212831
 GameObject:
   m_ObjectHideFlags: 0

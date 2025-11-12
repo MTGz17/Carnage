@@ -17,6 +17,11 @@ public class CurrencyAdd : MonoBehaviour
         if (cashSound)
             AudioSource.PlayClipAtPoint(cashSound, transform.position);
 
+        if (ScreenAnimator.Instance != null)
+        {
+            ScreenAnimator.Instance.PlayCashAnimation();
+        }
+
         GetComponent<Renderer>().enabled = false;
 
         Destroy(gameObject, cashSound ? cashSound.length : 0f);

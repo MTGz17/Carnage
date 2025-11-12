@@ -102,7 +102,7 @@ MonoBehaviour:
   - {fileID: 2494281441108408674, guid: cec91f2e084d7d24ca0a930ff8fc2c29, type: 3}
   - {fileID: 3323380715530873158, guid: 1087efb0042c6304b8aca4e53bfdaa2f, type: 3}
   - {fileID: 7604466492866326807, guid: bfebb3f6f777f594bbca6d2d275e22e3, type: 3}
-  specialSection: {fileID: 1434817898628265088, guid: bf022c83910b9b146bbb7b2868766fca, type: 3}
+  specialSection: {fileID: 8054035082069514954, guid: 06829202f1efafe4fba058eb45ec4fee, type: 3}
   endPoint: {fileID: 4102818109062602381}
 --- !u!1 &732210240669357526
 GameObject:

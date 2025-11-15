@@ -252,9 +252,81 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2654485542979587592, guid: 4c9b3251a623d124e8b8b389443991e4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.884
+      objectReference: {fileID: 0}
+    - target: {fileID: 2654485542979587592, guid: 4c9b3251a623d124e8b8b389443991e4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.884
+      objectReference: {fileID: 0}
+    - target: {fileID: 2654485542979587592, guid: 4c9b3251a623d124e8b8b389443991e4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.884
+      objectReference: {fileID: 0}
+    - target: {fileID: 2654485542979587592, guid: 4c9b3251a623d124e8b8b389443991e4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2654485542979587592, guid: 4c9b3251a623d124e8b8b389443991e4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -318
+      objectReference: {fileID: 0}
     - target: {fileID: 4196861190970655954, guid: 4c9b3251a623d124e8b8b389443991e4, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4687993265303764241, guid: 4c9b3251a623d124e8b8b389443991e4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 432
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943112018922422196, guid: 4c9b3251a623d124e8b8b389443991e4, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 96a45618c62095c43b7458dc3d1122c5, type: 2}
+    - target: {fileID: 6943112018922422196, guid: 4c9b3251a623d124e8b8b389443991e4, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -4065014770757257024, guid: 96a45618c62095c43b7458dc3d1122c5, type: 2}
+    - target: {fileID: 6943112018922422196, guid: 4c9b3251a623d124e8b8b389443991e4, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8189094976247143278, guid: 4c9b3251a623d124e8b8b389443991e4, type: 3}
+      propertyPath: m_fontSize
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8189094976247143278, guid: 4c9b3251a623d124e8b8b389443991e4, type: 3}
+      propertyPath: m_margin.w
+      value: -16.482971
+      objectReference: {fileID: 0}
+    - target: {fileID: 8189094976247143278, guid: 4c9b3251a623d124e8b8b389443991e4, type: 3}
+      propertyPath: m_margin.x
+      value: -36.896667
+      objectReference: {fileID: 0}
+    - target: {fileID: 8189094976247143278, guid: 4c9b3251a623d124e8b8b389443991e4, type: 3}
+      propertyPath: m_margin.y
+      value: -18.641968
+      objectReference: {fileID: 0}
+    - target: {fileID: 8189094976247143278, guid: 4c9b3251a623d124e8b8b389443991e4, type: 3}
+      propertyPath: m_margin.z
+      value: -66.61267
+      objectReference: {fileID: 0}
+    - target: {fileID: 8189094976247143278, guid: 4c9b3251a623d124e8b8b389443991e4, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 96a45618c62095c43b7458dc3d1122c5, type: 2}
+    - target: {fileID: 8189094976247143278, guid: 4c9b3251a623d124e8b8b389443991e4, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8189094976247143278, guid: 4c9b3251a623d124e8b8b389443991e4, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -4065014770757257024, guid: 96a45618c62095c43b7458dc3d1122c5, type: 2}
+    - target: {fileID: 8189094976247143278, guid: 4c9b3251a623d124e8b8b389443991e4, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9145023865808887756, guid: 4c9b3251a623d124e8b8b389443991e4, type: 3}
       propertyPath: m_Pivot.x
@@ -583,6 +655,7 @@ GameObject:
   - component: {fileID: 168634839}
   - component: {fileID: 168634842}
   - component: {fileID: 168634840}
+  - component: {fileID: 168634843}
   m_Layer: 5
   m_Name: ScorePopup
   m_TagString: Untagged
@@ -640,6 +713,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 168634838}
   m_CullTransparentMesh: 1
+--- !u!225 &168634843
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168634838}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &375713948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,6 +1465,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1993245129}
+  - component: {fileID: 1993245130}
   m_Layer: 5
   m_Name: SpeedLinesAnimation
   m_TagString: Untagged
@@ -1407,6 +1493,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 2560, y: 1440}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1993245130
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993245128}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1001 &4937746825287225708
 PrefabInstance:
   m_ObjectHideFlags: 0

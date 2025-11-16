@@ -15,6 +15,11 @@ public class ScoreMult : MonoBehaviour
 
         ScoreManager.Instance?.ActivateMultiplier(multiplier, duration);
 
+        if (ScreenAnimator.Instance != null)
+        {
+            ScreenAnimator.Instance.PlayDoubleAnimation();
+        }
+
         if (scoreMultiplierSound)
             AudioSource.PlayClipAtPoint(scoreMultiplierSound, transform.position);
 

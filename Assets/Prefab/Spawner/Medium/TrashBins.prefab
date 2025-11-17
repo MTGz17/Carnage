@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2006780885531876516}
-  - component: {fileID: 8590454484347867564}
   - component: {fileID: 6154319269216626579}
   - component: {fileID: 6768297338175317178}
   - component: {fileID: 7152341346101341262}
@@ -37,21 +36,6 @@ Transform:
   - {fileID: 7198428737412470097}
   m_Father: {fileID: 6286395231541792459}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &8590454484347867564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1194109458664097310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7ccb4bb009a4f144bffc89f7a017e5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SmallObject
-  launchForce: 50
-  pointsOnDestroy: 10
-  destroyDelay: 15
 --- !u!65 &6154319269216626579
 BoxCollider:
   m_ObjectHideFlags: 0

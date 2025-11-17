@@ -12,10 +12,15 @@ public class CurrencyAdd : MonoBehaviour
         if (hasTriggered || !other.CompareTag("Player")) return;
         hasTriggered = true;
 
-        CurrencyManager.Instance?.AddCurrency(pointsOnDestroy);
+        SaveManager.instance?.AddCurrency(pointsOnDestroy);
 
         if (cashSound)
             AudioSource.PlayClipAtPoint(cashSound, transform.position);
+
+        if (ScreenAnimator.Instance != null)
+        {
+            ScreenAnimator.Instance.PlayCashAnimation();
+        }
 
         GetComponent<Renderer>().enabled = false;
 

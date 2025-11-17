@@ -7,7 +7,10 @@ public class ScreenAnimator : MonoBehaviour
 
     [SerializeField] private GameObject cashAnimation;
     [SerializeField] private GameObject speedAnimation;
-    [SerializeField] private float hideDelay = 1f;
+    [SerializeField] private GameObject doubleAnimation;
+
+    [SerializeField] private float hideDelay = 2f;
+    [SerializeField] private float doubleHideDelay = 15f;
 
     private void Awake()
     {
@@ -23,19 +26,25 @@ public class ScreenAnimator : MonoBehaviour
 
         if (cashAnimation != null) cashAnimation.SetActive(false);
         if (speedAnimation != null) speedAnimation.SetActive(false);
+        if (doubleAnimation != null) doubleAnimation.SetActive(false);
     }
 
     public void PlayCashAnimation()
     {
-        PlayAnimation(cashAnimation, "CashAnimation");
+        PlayAnimation(cashAnimation, "CashAnimation", hideDelay);
     }
 
     public void PlaySpeedAnimation()
     {
-        PlayAnimation(speedAnimation, "SpeedAnimation");
+        PlayAnimation(speedAnimation, "SpeedAnimation", hideDelay);
     }
 
-    private void PlayAnimation(GameObject animationObject, string animationName)
+    public void PlayDoubleAnimation()
+    {
+        PlayAnimation(doubleAnimation, "DoubleAnimation", doubleHideDelay);
+    }
+
+    private void PlayAnimation(GameObject animationObject, string animationName, float delay)
     {
         if (animationObject == null) return;
 
@@ -45,7 +54,7 @@ public class ScreenAnimator : MonoBehaviour
         animationObject.SetActive(true);
         animator.Play(animationName);
 
-        StartCoroutine(HideAfterDelay(animationObject, hideDelay));
+        StartCoroutine(HideAfterDelay(animationObject, delay));
     }
 
     private IEnumerator HideAfterDelay(GameObject animationObject, float delay)

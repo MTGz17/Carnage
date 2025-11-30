@@ -10,6 +10,6 @@ public class MapSelector : MonoBehaviour
 
     public void LoadVegas()
     {
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadSceneAsync(4);
     }
 }

@@ -19,7 +19,7 @@ public class MediumObject : MonoBehaviour
         Vector3 impactDirection = collision.relativeVelocity.normalized;
         rb.AddForce(impactDirection * launchForce, ForceMode.Impulse);
 
-        if (collision.relativeVelocity.magnitude >= 17.88f)
+        if (collision.relativeVelocity.magnitude >= 11.17f)
         {
             if (ScoreManager.Instance != null)
                 {

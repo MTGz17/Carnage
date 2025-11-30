@@ -19,7 +19,7 @@ public class SectionGenerator : MonoBehaviour
 
         GameObject selectedSection;
 
-        if (sectionCount % 3 == 0)
+        if (sectionCount % 15 == 0)
         {
             selectedSection = specialSection;
         }

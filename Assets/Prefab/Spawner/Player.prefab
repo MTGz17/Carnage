@@ -238,7 +238,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7571989740222227583}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.05799888, y: -0.000000014452362, z: 8.396342e-10, w: 0.99831665}
+  m_LocalRotation: {x: 0.05799887, y: -0.000000018999943, z: 0.0000000011038335, w: 0.9983167}
   m_LocalPosition: {x: 0, y: 2.5, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -302,7 +302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineFollow
   TrackerSettings:
     BindingMode: 4
-    PositionDamping: {x: 1, y: 1, z: 1}
+    PositionDamping: {x: 0.4, y: 0.4, z: 0.4}
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1

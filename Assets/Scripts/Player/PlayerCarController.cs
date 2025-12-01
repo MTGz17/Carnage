@@ -5,23 +5,30 @@ using Unity.Cinemachine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerCarController : MonoBehaviour
 {
+    [Header("Driving Settings")]
     [SerializeField] private float motorForce = 10000f;
     [SerializeField] private float maxSteerAngle = 15f;
 
+    [Header("Wheel Colliders")]
     [SerializeField] private WheelCollider frontLeftWheelCollider;
     [SerializeField] private WheelCollider frontRightWheelCollider;
     [SerializeField] private WheelCollider backLeftWheelCollider;
     [SerializeField] private WheelCollider backRightWheelCollider;
 
+    [Header("Wheel Transforms")]
     [SerializeField] private Transform frontLeftWheelTransform;
     [SerializeField] private Transform frontRightWheelTransform;
     [SerializeField] private Transform backLeftWheelTransform;
     [SerializeField] private Transform backRightWheelTransform;
 
+    [Header("Boost Settings")]
     [SerializeField] private float boostForce = 10000f;
-
     [SerializeField] private float speedCap = 53.6448f;
     [SerializeField] private float boostOverrideDuration = 2f;
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource accelerationAudio;
+    [SerializeField] private AudioSource brakeAudio;
 
     private float speedCapOverrideTimer = 0f;
 
@@ -101,7 +108,10 @@ public class PlayerCarController : MonoBehaviour
         frontRightWheelCollider.brakeTorque = brakeTorque;
         backLeftWheelCollider.brakeTorque = brakeTorque;
         backRightWheelCollider.brakeTorque = brakeTorque;
+
+        HandleSound(motorInput, brakeTorque);
     }
+
 
     private void HandleSteering()
     {
@@ -147,6 +157,38 @@ public class PlayerCarController : MonoBehaviour
         wheelCollider.GetWorldPose(out pos, out rot);
         wheelTransform.position = pos;
         wheelTransform.rotation = rot;
+    }
+
+    private void HandleSound(float motorInput, float brakeTorque)
+    {
+        float speed = rb.linearVelocity.magnitude;
+
+        bool isAccelerating = Mathf.Abs(motorInput) > 0.1f && brakeTorque == 0f;
+        bool isBraking = brakeTorque > 4000f && speed > 1f;
+
+        if (isAccelerating)
+        {
+            if (!accelerationAudio.isPlaying)
+                accelerationAudio.Play();
+
+            accelerationAudio.pitch = 1f + Mathf.Abs(motorInput) * 0.5f;
+        }
+        else
+        {
+            if (accelerationAudio.isPlaying)
+                accelerationAudio.Pause();
+        }
+
+        if (isBraking)
+        {
+            if (!brakeAudio.isPlaying)
+                brakeAudio.Play();
+        }
+        else
+        {
+            if (brakeAudio.isPlaying)
+                brakeAudio.Stop();
+        }
     }
 
     public void BoostSpeed()

@@ -3,8 +3,9 @@ using UnityEngine;
 public class FinalPoints : MonoBehaviour
 {
     public int finalPoints = 10000;
-    private bool isTriggered = false;
+    public AudioSource audioSource;
 
+    private bool isTriggered = false;
     private FinalManager finalManager;
 
     private void Start()
@@ -24,6 +25,19 @@ public class FinalPoints : MonoBehaviour
         isTriggered = true;
 
         ScoreManager.Instance?.AddPoints(finalPoints);
+
+        StartCoroutine(PlayAudioThenShowScore());
+    }
+
+    private System.Collections.IEnumerator PlayAudioThenShowScore()
+    {
+        if (audioSource != null)
+        {
+            audioSource.Play();
+
+            while (audioSource.isPlaying)
+                yield return null;
+        }
 
         finalManager?.ShowFinalScore();
     }

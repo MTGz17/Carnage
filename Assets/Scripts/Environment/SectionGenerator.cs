@@ -6,7 +6,7 @@ public class SectionGenerator : MonoBehaviour
     [SerializeField] private GameObject specialSection;
     [SerializeField] private Transform endPoint;
 
-    private static int sectionCount = 0;
+    public static int sectionCount = 0;
     private bool hasSpawned = false;
 
     private void OnTriggerEnter(Collider other)
@@ -19,7 +19,7 @@ public class SectionGenerator : MonoBehaviour
 
         GameObject selectedSection;
 
-        if (sectionCount % 15 == 0)
+        if (sectionCount % 10 == 0)
         {
             selectedSection = specialSection;
         }
@@ -45,5 +45,11 @@ public class SectionGenerator : MonoBehaviour
 
         Vector3 positionOffset = endPoint.position - newStart.position;
         newSection.transform.position += positionOffset;
+    }
+
+    public static void ResetSectionCount()
+    {
+        sectionCount = 0;
+        Debug.Log("Section Count Reset!");
     }
 }

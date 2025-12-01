@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RandomSpawner
   prefabs:
   - {fileID: 8345873644474713883, guid: 080e5375dcd6c5b438479624d6f5ce97, type: 3}
-  - {fileID: 7983235013418551603, guid: 9bf8b61c1d6d3d1499818c1a64fe5584, type: 3}
+  - {fileID: 4651301367979373990, guid: 34735de53c6e6504d977880851665db4, type: 3}

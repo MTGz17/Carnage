@@ -44,6 +44,8 @@ public class PlayerCarController : MonoBehaviour
         rb.useGravity = true;
         rb.centerOfMass = Vector3.zero;
 
+        SectionGenerator.ResetSectionCount();
+
         CinemachineCamera Cam = Object.FindFirstObjectByType<CinemachineCamera>();
         if (Cam != null)
         {

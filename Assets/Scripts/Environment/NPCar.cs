@@ -5,15 +5,18 @@ public class NPCar : MonoBehaviour
     public float speed = 5f;
     private Rigidbody rb;
     public float launchForce = 8f;
+    public float upwardForce = 10f;
     public int pointsOnDestroy = 500;
-    public float destroyDelay = 1f;
 
     private FinalManager finalManager;
+    private AudioSource audioSource;
+    private bool hasPlayedSound = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        finalManager = FindObjectOfType<FinalManager>();
+        finalManager = FindFirstObjectByType<FinalManager>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
@@ -25,8 +28,17 @@ public class NPCar : MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("Player")) return;
 
+        float destroyDelay = 0f;
+        if (!hasPlayedSound && audioSource != null)
+        {
+            audioSource.Play();
+            hasPlayedSound = true;
+            destroyDelay = audioSource.clip.length;
+        }
+
         Vector3 impactDirection = collision.relativeVelocity.normalized;
-        rb.AddForce(impactDirection * launchForce, ForceMode.Impulse);
+        Vector3 launchDirection = impactDirection + Vector3.up * upwardForce;
+        rb.AddForce(launchDirection * launchForce, ForceMode.Impulse);
 
         float impactSpeed = collision.relativeVelocity.magnitude;
 
@@ -36,7 +48,8 @@ public class NPCar : MonoBehaviour
             {
                 ScoreManager.Instance.AddPoints(pointsOnDestroy);
             }
-            Destroy(gameObject, destroyDelay);
+
+            Destroy(gameObject, destroyDelay > 0f ? destroyDelay : 1f);
         }
         else
         {

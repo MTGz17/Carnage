@@ -13,6 +13,8 @@ public class RandomSpawner : MonoBehaviour
     void SpawnRandomPrefab()
     {
         int index = Random.Range(0, prefabs.Length);
-        Instantiate(prefabs[index], transform.position, Quaternion.identity);
+        GameObject prefabToSpawn = prefabs[index];
+
+        Instantiate(prefabToSpawn, transform.position, prefabToSpawn.transform.rotation);
     }
 }

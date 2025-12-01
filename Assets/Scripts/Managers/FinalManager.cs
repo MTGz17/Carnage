@@ -68,7 +68,8 @@ public class FinalManager : MonoBehaviour
 
     public void PlayAgain()
     {
-        SceneManager.LoadSceneAsync(2);
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.buildIndex);
     }
 
     public void MainMenuReturn()

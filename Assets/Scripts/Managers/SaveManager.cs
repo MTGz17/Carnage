@@ -7,13 +7,14 @@ public class SaveManager : MonoBehaviour
 
     public int currentCar;
     public int currency;
-    public bool [] carsUnlocked = new bool [3] {true, false, false};
+    public bool[] carsUnlocked;
 
     public float masterVolume = 0f;
     public float musicVolume = 0f;
     public float sfxVolume = 0f;
 
     private string savePath;
+    private int totalCars = 0; // Will be set dynamically based on CarSelector
 
     private void Awake()
     {
@@ -26,6 +27,8 @@ public class SaveManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         savePath = Path.Combine(Application.persistentDataPath, "playerData.json");
+
+        // Load saved data
         Load();
     }
 
@@ -65,14 +68,35 @@ public class SaveManager : MonoBehaviour
         {
             currentCar = 0;
             currency = 0;
-            if(carsUnlocked == null)
-            {
-                carsUnlocked = new bool [3] {true, false, false};
-            }
+            carsUnlocked = null; // Will be initialized later
             masterVolume = 0f;
             musicVolume = 0f;
             sfxVolume = 0f;
             Debug.Log("No save file found. Starting with default values.");
+        }
+    }
+
+    /// <summary>
+    /// Call this when the total number of cars is known (e.g., from CarSelector)
+    /// </summary>
+    public void InitializeCars(int numberOfCars)
+    {
+        totalCars = numberOfCars;
+
+        if (carsUnlocked == null || carsUnlocked.Length < totalCars)
+        {
+            bool[] newCarsUnlocked = new bool[totalCars];
+            newCarsUnlocked[0] = true; // Always unlock first car
+
+            if (carsUnlocked != null)
+            {
+                for (int i = 0; i < carsUnlocked.Length; i++)
+                {
+                    newCarsUnlocked[i] = carsUnlocked[i];
+                }
+            }
+
+            carsUnlocked = newCarsUnlocked;
         }
     }
 
@@ -91,6 +115,7 @@ public class SaveManager : MonoBehaviour
         currency = amount;
         Save();
     }
+
     #endregion
 }
 
@@ -99,7 +124,7 @@ class PlayerData
 {
     public int currentCar;
     public int currency;
-    public bool [] carsUnlocked;
+    public bool[] carsUnlocked;
     public float masterVolume;
     public float musicVolume;
     public float sfxVolume;

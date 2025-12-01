@@ -16,6 +16,8 @@ public class CarSelector : MonoBehaviour
 
     private void Start()
     {
+        SaveManager.instance.InitializeCars(transform.childCount);
+
         currentCar = SaveManager.instance.currentCar;
         SelectCar(currentCar);
     }

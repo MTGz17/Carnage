@@ -175,8 +175,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CarLoader
   carModels:
   - {fileID: 5743821258654524698, guid: c9d3324822dae704e83db2bf9ed50277, type: 3}
-  - {fileID: 2337794718467696361, guid: ab06dd2426ffca94a8c5244ba7911f07, type: 3}
-  - {fileID: 3193905266798567172, guid: 3b055f51f8d679246901d022e2c69ec0, type: 3}
+  - {fileID: 5160139114165523117, guid: 15aa21a7eee4ba746a185ceb70f20b2f, type: 3}
+  - {fileID: 1783624270598620001, guid: d82852956de7fde4cbc571001d90b424, type: 3}
+  - {fileID: 5777683994459960977, guid: aa74a2d27b87562449d67446a21b535a, type: 3}
 --- !u!1 &5886037753018244133
 GameObject:
   m_ObjectHideFlags: 0

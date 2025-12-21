@@ -134,7 +134,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226070173910598153}
   serializedVersion: 5
-  m_Mass: 1500
+  m_Mass: 50
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: -0.5, z: 0}
@@ -283,10 +283,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ca5fc652d0e1449aee8356dda6e444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCar
-  speed: 5
+  speed: 30
   launchForce: 8
+  upwardForce: 10
   pointsOnDestroy: 500
-  destroyDelay: 1
 --- !u!1 &2523153581387497684
 GameObject:
   m_ObjectHideFlags: 0

@@ -150,7 +150,7 @@ MonoBehaviour:
   - {fileID: 5371060188865070255, guid: 783b51e0cb22d0a4f88378900ab26627, type: 3}
   - {fileID: 6039452732274205310, guid: 1acc5118644bb95418b0fcd146b3d184, type: 3}
   - {fileID: 1226070173910598153, guid: e43d876a13979ff4d949ec1233924dab, type: 3}
-  spawnInterval: 5
+  spawnInterval: 1
 --- !u!1 &4643149411013255295
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +199,7 @@ MonoBehaviour:
   - {fileID: 5371060188865070255, guid: 6ce3e6321d2a99046bb9edae5bd5b10c, type: 3}
   - {fileID: 6039452732274205310, guid: c51ab4216c496f1458a3b8a26815b6cc, type: 3}
   - {fileID: 1226070173910598153, guid: 9c2e86fda4492724da005f17f4324a9b, type: 3}
-  spawnInterval: 5
+  spawnInterval: 1
 --- !u!1 &7049216929050109060
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,6 +573,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3536103352872637668, guid: e43d876a13979ff4d949ec1233924dab, type: 3}
+      propertyPath: speed
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -591,6 +595,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5246105857427785916}
     m_Modifications:
+    - target: {fileID: 329242100161941450, guid: 783b51e0cb22d0a4f88378900ab26627, type: 3}
+      propertyPath: speed
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2401594732291899435, guid: 783b51e0cb22d0a4f88378900ab26627, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.3999977
@@ -653,6 +661,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5246105857427785916}
     m_Modifications:
+    - target: {fileID: 2674789648761434345, guid: 1acc5118644bb95418b0fcd146b3d184, type: 3}
+      propertyPath: speed
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4738858690032391138, guid: 1acc5118644bb95418b0fcd146b3d184, type: 3}
       propertyPath: m_LocalPosition.x
       value: -54.01

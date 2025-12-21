@@ -3,11 +3,14 @@ using UnityEngine;
 public class MediumObject : MonoBehaviour
 {
     private Rigidbody rb;
+    private AudioSource audioSource;
+
     public float launchForce = 8f;
     public float upwardForce = 10f;
     public int pointsOnDestroy = 50;
+    public float destroyDelay = 1.5f;
 
-    private AudioSource audioSource;
+    private bool isDestroying = false;
 
     void Start()
     {
@@ -19,19 +22,21 @@ public class MediumObject : MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("Player")) return;
 
-        float destroyDelay = 0f;
         if (audioSource != null)
         {
             audioSource.Play();
-            destroyDelay = audioSource.clip.length;
         }
 
         Vector3 impactDirection = collision.relativeVelocity.normalized;
         Vector3 launchDirection = impactDirection + Vector3.up * upwardForce;
         rb.AddForce(launchDirection * launchForce, ForceMode.Impulse);
 
+        if (isDestroying) return;
+
         if (collision.relativeVelocity.magnitude >= 11.17f)
         {
+            isDestroying = true;
+
             if (ScoreManager.Instance != null)
             {
                 ScoreManager.Instance.AddPoints(pointsOnDestroy);

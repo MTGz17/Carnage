@@ -929,7 +929,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 680, y: -475}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 425, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &559267216
 MonoBehaviour:
@@ -951,7 +951,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 1299
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 96a45618c62095c43b7458dc3d1122c5, type: 2}
   m_sharedMaterial: {fileID: -4065014770757257024, guid: 96a45618c62095c43b7458dc3d1122c5, type: 2}
@@ -1447,7 +1447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4175611705735006090, guid: 540b74202e04ed94bbc6147079302e15, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5246979666801360372, guid: 540b74202e04ed94bbc6147079302e15, type: 3}
       propertyPath: m_AnchoredPosition.x

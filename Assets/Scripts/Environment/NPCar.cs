@@ -27,6 +27,8 @@ public class NPCar : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (!collision.gameObject.CompareTag("Player")) return;
+        
+        rb.useGravity = false;
 
         float destroyDelay = 0f;
         if (!hasPlayedSound && audioSource != null)

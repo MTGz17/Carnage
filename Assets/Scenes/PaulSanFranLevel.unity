@@ -235,6 +235,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -72
       objectReference: {fileID: 0}
+    - target: {fileID: 4004464626060201476, guid: 4c9b3251a623d124e8b8b389443991e4, type: 3}
+      propertyPath: musicSource
+      value: 
+      objectReference: {fileID: 1797497175}
     - target: {fileID: 4196861190970655954, guid: 4c9b3251a623d124e8b8b389443991e4, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -886,6 +890,11 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!82 &1797497175 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8111766838593021482, guid: 5c0df26ae2bf71a4b90b7f4f401a0c20, type: 3}
+  m_PrefabInstance: {fileID: 5092534687772603055}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5092534687772603055
 PrefabInstance:
   m_ObjectHideFlags: 0

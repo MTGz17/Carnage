@@ -154,4 +154,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SmallObject
   launchForce: 8
   pointsOnDestroy: 10
-  destroyDelay: 0.2
+  destroyDelay: 4

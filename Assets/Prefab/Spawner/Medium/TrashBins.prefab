@@ -98,8 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MediumObject
   launchForce: 8
-  upwardForce: 10
+  upwardForce: 8
   pointsOnDestroy: 400
+  destroyDelay: 4
 --- !u!82 &6336027544240124568
 AudioSource:
   m_ObjectHideFlags: 0

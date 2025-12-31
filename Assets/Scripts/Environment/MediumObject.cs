@@ -8,7 +8,7 @@ public class MediumObject : MonoBehaviour
     public float launchForce = 8f;
     public float upwardForce = 10f;
     public int pointsOnDestroy = 50;
-    public float destroyDelay = 1.5f;
+    public float destroyDelay = 4f;
 
     private bool isDestroying = false;
 

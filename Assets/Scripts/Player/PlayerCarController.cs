@@ -6,7 +6,7 @@ using Unity.Cinemachine;
 public class PlayerCarController : MonoBehaviour
 {
     [Header("Driving Settings")]
-    [SerializeField] private float motorForce = 10000f;
+    [SerializeField] private float motorForce = 160f;
     [SerializeField] private float maxSteerAngle = 15f;
 
     [Header("Wheel Colliders")]
@@ -22,7 +22,7 @@ public class PlayerCarController : MonoBehaviour
     [SerializeField] private Transform backRightWheelTransform;
 
     [Header("Boost Settings")]
-    [SerializeField] private float boostForce = 10000f;
+    [SerializeField] private float boostForce = 1000f;
     [SerializeField] private float speedCap = 53.6448f;
     [SerializeField] private float boostOverrideDuration = 2f;
 
@@ -81,8 +81,8 @@ public class PlayerCarController : MonoBehaviour
         float motorInput = input.y;
         float currentSpeed = Vector3.Dot(rb.linearVelocity, transform.forward);
 
-        float lightBrakeTorque = 4000f;
-        float heavyBrakeTorque = 160000f;
+        float lightBrakeTorque = 65f;
+        float heavyBrakeTorque = 2560f;
         float brakeTorque = 0f;
 
         frontLeftWheelCollider.motorTorque = 0f;
@@ -121,12 +121,18 @@ public class PlayerCarController : MonoBehaviour
         float currentSpeed = horizontalVelocity.magnitude;
 
         float speedFactor = Mathf.Clamp01(currentSpeed / speedCap);
-        float steerReduction = Mathf.Lerp(1f, 0.3f, speedFactor);
 
+        float steerReduction = Mathf.Lerp(1f, 0.6f, speedFactor);
         currentSteerAngle = maxSteerAngle * input.x * steerReduction;
 
         frontLeftWheelCollider.steerAngle = currentSteerAngle;
         frontRightWheelCollider.steerAngle = currentSteerAngle;
+
+        if (currentSpeed < 10f && Mathf.Abs(input.x) > 0.1f)
+        {
+            float assistStrength = 5.5f;
+            rb.AddTorque(Vector3.up * input.x * assistStrength, ForceMode.Acceleration);
+        }
     }
 
     private void CapSpeed()
@@ -166,7 +172,7 @@ public class PlayerCarController : MonoBehaviour
         float speed = rb.linearVelocity.magnitude;
 
         bool isAccelerating = Mathf.Abs(motorInput) > 0.1f && brakeTorque == 0f;
-        bool isBraking = brakeTorque > 4000f && speed > 1f;
+        bool isBraking = brakeTorque > 60f && speed > 1f;
 
         if (isAccelerating)
         {
